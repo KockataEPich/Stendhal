@@ -35,7 +35,6 @@ public class HttpClientTest {
 	 * Tests for fetchFirstLine
 	 */
 	@Test
-	@Ignore
 	public void testFetchFirstLine() {
 		HttpClient client = new HttpClient("http://arianne.sourceforge.net/");
 //TODO: reactive me		assertThat(client.fetchFirstLine(), equalTo("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"> "));
@@ -54,6 +53,7 @@ public class HttpClientTest {
 	 * Tests for getInputStream
 	 */
 	@Test
+	@Ignore
 	public void testGetInputStream() {
 		HttpClient client = new HttpClient("http://sf.net/projects/arianne");
 		InputStream is = client.getInputStream();
