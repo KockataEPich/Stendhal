@@ -1,7 +1,6 @@
 package games.stendhal.server.maps.kirdneh.city;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static utilities.SpeakerNPCTestHelper.getReply;
 
@@ -19,7 +18,7 @@ import utilities.ZonePlayerAndNPCTestImpl;
  */
 public class KirdnehFishyMarketNPCTest extends ZonePlayerAndNPCTestImpl {
 
-	private static final String ZONE_NAME = "int_ados_felinas_house";
+	private static final String ZONE_NAME = "int_kirdneh_city";
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -50,15 +49,12 @@ public class KirdnehFishyMarketNPCTest extends ZonePlayerAndNPCTestImpl {
 		assertTrue(en.step(player, "aye"));
 		assertEquals("Well, shiver me timbers! Check out that blackboard o'er thar fer me prices an' what i be buyin", getReply(npc));
 
-		assertFalse(en.step(player, "quest"));
-		assertEquals("Ye don't ha'e the guts ta do whut I need done.", getReply(npc));
-
 		assertTrue(en.step(player, "offer"));
 		assertEquals("Check out that thar blackboard fer how many dubloons I be givin.", getReply(npc));
 		
-		assertTrue(equipWithItem(player, "red lion fish"));
-		assertTrue(en.step(player, "sell red lion fish"));
-		assertEquals("A red lion fish is worth 120. Do you want to sell it?", getReply(npc));
+		assertTrue(equipWithItem(player, "red lionfish"));
+		assertTrue(en.step(player, "sell red lionfish"));
+		assertEquals("A red lionfish is worth 120. Do you want to sell it?", getReply(npc));
 		
 		assertTrue(en.step(player, "yes"));
 		assertEquals("Thanks! Here is your money.", getReply(npc));
