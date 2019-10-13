@@ -1,11 +1,14 @@
 // $Id$
 package games.stendhal.server.actions.equip;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.After;
@@ -22,6 +25,8 @@ import games.stendhal.server.entity.item.StackableItem;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.maps.MockStendhalRPRuleProcessor;
 import marauroa.common.game.RPAction;
+import marauroa.common.game.RPObject;
+import marauroa.common.game.RPSlot;
 import marauroa.server.game.db.DatabaseFactory;
 import utilities.PlayerTestHelper;
 import utilities.ZoneAndPlayerTestImpl;
@@ -419,6 +424,64 @@ public class EquipmentActionTest  extends ZoneAndPlayerTestImpl {
 		assertEquals("You cannot take items which are below other players", PlayerTestHelper.getPrivateReply(player));
 		assertEquals(1, localzone.getItemsOnGround().size());
 		assertFalse(player.isEquipped("cheese"));
+	}
+	
+	/**
+	 * Check that lucky charms do not stack in keyring
+	 */
+	
+	@Test
+	public void testLuckyCharmsDontStackInKeyring() {
+		StendhalRPZone localzone = new StendhalRPZone("testzone", 20, 20);
+		SingletonRepository.getRPWorld().addRPZone(localzone);
+		final Player player = PlayerTestHelper.createPlayer("bob");
+//		player.addSlot(new PlayerSlot("keyring"));
+		StackableItem charm = (StackableItem) SingletonRepository.getEntityManager().getItem("lucky charm");
+		
+		// check that every charm added to the keyring gets its own slot
+		int i;
+		for (i = 0; i < 8; i ++) {
+			player.equip("keyring", charm);
+		}
+		localzone.add(player);
+		assertThat(player.getNumberOfEquipped("lucky charm"), is(i));
+		RPSlot slot = player.getSlot("keyring");
+		Iterator<RPObject> it = slot.iterator();
+		while (it.hasNext()) {
+			StackableItem stack = (StackableItem) it.next();
+			assertThat(stack.getName(), is("lucky charm"));
+			assertThat(stack.getQuantity(), is(1));
+		}
+		
+		// check that moving charm from hand to keyring, when the keyring is already
+		// full, leaves the stack in hand unaffected
+		final StackableItem stack = (StackableItem) SingletonRepository.getEntityManager().getItem("lucky charm");
+		stack.setQuantity(2);
+		player.equip("rhand", stack);
+		
+		
+		final EquipmentAction action = new EquipAction();
+		RPAction equip = new RPAction();
+		equip.put("type", "equip");
+		equip.put(EquipActionConsts.BASE_OBJECT, player.getID().getObjectID());
+		equip.put(EquipActionConsts.BASE_SLOT, "rhand");
+		equip.put(EquipActionConsts.BASE_ITEM, charm.getID().getObjectID());
+
+		equip.put(EquipActionConsts.TARGET_OBJECT, player.getID().getObjectID());
+		equip.put(EquipActionConsts.TARGET_SLOT, "keyring");
+		
+		action.onAction(player, equip);
+		assertThat(stack.getQuantity(), is(2));
+
+		
+		// and that all the charms in the keyring are still single
+		RPSlot slot2 = player.getSlot("keyring");
+		Iterator<RPObject> it2 = slot2.iterator();
+		while (it2.hasNext()) {
+			StackableItem stack2 = (StackableItem) it2.next();
+			assertThat(stack2.getName(), is("lucky charm"));
+			assertThat(stack2.getQuantity(), is(1));
+		}
 	}
 
 	/**
