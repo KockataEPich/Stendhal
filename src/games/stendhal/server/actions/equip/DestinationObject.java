@@ -312,14 +312,19 @@ class DestinationObject extends MoveableObject {
 	 * @param entity
 	 * @param player
 	 */
+	
 	public void addToWorld(Entity entity, final Player player) {
+		addToWorld(entity, player, true);
+	}
+	
+	public void addToWorld(Entity entity, final Player player, boolean tryCombineStack) {
 		if (parent != null) {
 			// drop the entity into a slot
 			final RPSlot rpslot = parent.getSlot(slot);
 
 
 			// check if the item can be merged with one already in the slot
-			if (entity instanceof StackableItem) {
+			if (entity instanceof StackableItem && tryCombineStack) {
 				final StackableItem stackEntity = (StackableItem) entity;
 				// find a stackable item of the same type
 				final Iterator<RPObject> it = rpslot.iterator();

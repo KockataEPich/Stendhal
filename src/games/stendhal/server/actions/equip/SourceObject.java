@@ -316,7 +316,24 @@ class SourceObject extends MoveableObject {
 			logger.warn("tried to equip an entity into disallowed slot: " + item.getClass() + "; equip rejected");
 			return false;
 		}
+		
+		String destSlot = dest.getContentSlotName();
+		boolean destIsKeyring = destSlot != null && destSlot.equals("keyring");
+		String itemName = this.getEntityName();
+		boolean itemIsLuckyCharm = itemName != null && itemName.equals("lucky charm");
 
+		if (destIsKeyring && itemIsLuckyCharm) {
+			RPSlot slot = player.getSlot(dest.getContentSlotName());
+			// if there is no room in the keyring for more lucky charms, abandon the move
+			// attempt
+			if (slot.isFull()) {
+				player.sendPrivateText("There is no space in there.");
+				return false;
+			} else {
+				this.quantity = 1;
+			}
+		}
+		
 		if (!dest.isValid() || !dest.preCheck(item, player)) {
 			// no extra logger warning needed here as each is inside the methods called above, where necessary
 			return false;
@@ -325,7 +342,11 @@ class SourceObject extends MoveableObject {
 		final String[] srcInfo = getLogInfo();
 		final Item entity = removeFromWorld();
 		logger.debug("item removed");
-		dest.addToWorld(entity, player);
+		if (destIsKeyring && itemIsLuckyCharm) {
+			dest.addToWorld(entity, player, false);
+		} else {
+			dest.addToWorld(entity, player);
+		}
 		logger.debug("item readded");
 
 		new ItemLogger().equipAction(player, entity, srcInfo, dest.getLogInfo());
