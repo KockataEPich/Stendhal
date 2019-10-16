@@ -92,15 +92,25 @@ public class SummonPetScroll extends Scroll {
 			return false;
 		}
 
-		String type = getInfoString().replaceAll("_", " ");
-		if (type == null) {
-			// default to cat, if no other type is specified
-			type = "cat";
-		}
+		String type;
+		String[] petAttributes = null;
+		if (getInfoString() == null)
+			{
+				// default to cat, if no other type is specified
+				type = "catDefault";
+			}
+		else
+			{
+				petAttributes = getInfoString().split(";");
+				type = petAttributes[0];
+			}
 
 		// create it
 		Pet pet = null;
 		switch (type) {
+		case "catDefault":
+			pet = new Cat(player);
+			break;
 		case "cat":
 			pet = new Cat(player);
 			break;
@@ -115,6 +125,18 @@ public class SummonPetScroll extends Scroll {
 			player.sendPrivateText("This scroll does not seem to work. You should talk to the magician who created it.");
 			return false;
 		}
+
+		//Set the stats if there were any previously
+		if (petAttributes != null)
+			{
+				pet.setName(petAttributes[1]);
+				pet.setBaseHP(Integer.parseInt(petAttributes[2]));
+				pet.setHP(Integer.parseInt(petAttributes[3]));
+				pet.setXP(Integer.parseInt(petAttributes[4]));
+				pet.setWeight(Integer.parseInt(petAttributes[5]));
+				pet.setAtkXP(Integer.parseInt(petAttributes[6]));
+				pet.setDefXP(Integer.parseInt(petAttributes[7]));
+			}
 
 		pet.setPosition(player.getX(), player.getY() + 1);
 		dropBlank(player);

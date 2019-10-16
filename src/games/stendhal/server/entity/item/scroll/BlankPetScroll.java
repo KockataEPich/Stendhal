@@ -60,13 +60,25 @@ public class BlankPetScroll extends Scroll {
 	@Override
 	protected boolean useScroll(final Player player) {
 		final StendhalRPZone zone = player.getZone();
-		final String petName = player.getPet().getName();
+
+		final String petName = player.getPet().getName().replaceAll("_", " ");
+		final String petType = player.getPet().get("type").replaceAll("_", " ");
+		final int petHPMax = player.getPet().getBaseHP();
+		final int HPActual = player.getPet().getHP();
+		final int petXP = player.getPet().getXP();
+		final int petWeight = player.getPet().getWeight();
+		final int petAttack = player.getPet().getAtkXP();
+		final int petDefence = player.getPet().getDefXP();
+		final String petAttributes = petType + ";" + petName + ";" + petHPMax + ";" + HPActual + ";" + petXP + ";" + petWeight + ";" + petAttack + ";" + petDefence;
 
 		if (zone.isTeleportInAllowed(player.getX(), player.getY())) {
 			final Item summonPetScroll = SingletonRepository.getEntityManager().getItem(
 					"summon pet scroll");
-			summonPetScroll.setInfoString(petName);
+
+			// name, HP max, HP actual, XP, Weight, Attack, Defence into infostring
+			summonPetScroll.setInfoString(petAttributes);
 			player.equipOrPutOnGround(summonPetScroll);
+
 
 			final Pet pet = player.getPet();
 
