@@ -13,8 +13,10 @@ package games.stendhal.server.maps.quests;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import games.stendhal.common.grammar.Grammar;
 import games.stendhal.server.entity.npc.ChatAction;
@@ -77,6 +79,16 @@ public class EmotionCrystals extends AbstractQuest {
 	private static final String QUEST_SLOT = "emotion_crystals";
 
 	private static final String[] crystalColors = { "red", "purple", "yellow", "pink", "blue" };
+	
+	private static Map<String, Boolean> crystalsFound = new HashMap<String, Boolean>();
+	static {
+		crystalsFound.put("red", false);
+		crystalsFound.put("purple", false);
+		crystalsFound.put("yellow", false);
+		crystalsFound.put("pink", false);
+		crystalsFound.put("blue", false);		
+	}
+	//private static boolean[] crystalsFound = {false,false,false,false,false};
 
 	// Amount of time, in minutes, player must wait before retrying the riddle (24 hours)
 	private static final int WAIT_TIME_WRONG = 24 * 60;
@@ -106,13 +118,16 @@ public class EmotionCrystals extends AbstractQuest {
 		List<String> gatheredCrystals = new ArrayList<String>();
 		boolean hasAllCrystals = true;
 
+		//checks if the player has found the crystal
+		//and whether they have them all aswell
 		for (String color : crystalColors) {
-			if (player.isEquipped(color + " emotion crystal")) {
-				gatheredCrystals.add(color + " emotion crystal");
-			} else {
+			if (hasCrystalBeenFound(player,color)) {   
+				gatheredCrystals.add(color + " emotion crystal"); 
+			} else {                                               
 				hasAllCrystals = false;
 			}
 		}
+		
 		if (!gatheredCrystals.isEmpty()) {
 			String tell = "I have found the following crystals: ";
 			tell += Grammar.enumerateCollection(gatheredCrystals);
@@ -127,6 +142,13 @@ public class EmotionCrystals extends AbstractQuest {
 			res.add("I gave the crystals to Julius for his wife. I got some experience, karma and useful stone legs.");
 		}
 		return res;
+	}
+	
+	private boolean hasCrystalBeenFound(final Player player, String curColor) {
+		if (player.isEquipped(curColor + " emotion crystal")) {   
+			crystalsFound.put(curColor, true);  
+		} 		
+		return crystalsFound.get(curColor);
 	}
 
 	private void prepareRequestingStep() {
