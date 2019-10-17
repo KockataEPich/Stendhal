@@ -200,3 +200,18 @@ Notable contributors:
 - SnowFlake
   · Maps maker
   · NPCs
+
+- Konstadin Belchev
+  . Fix issue #1 ("Rainbow Beans NPC's dialogue a bit mangled")
+- Bodgan-Gabriel Tudor
+  . Fix issue #2 ("Weightless Baby Dragons")
+- Karl Meakin
+  . Fix issue #3 ("Stackable items on the keyring just wrong")
+- Mario Kaymakanov
+  . Fix issue #4 ("Travel log error for Emotion Crystals Quest")
+- Benjamin Piggot
+  . Fix issue #6 ("Fishmonger in Kirdneh is Missing a Fish")
+- Heng Gao
+  . Fix issue #5 ("Mithril Clasp should go on key ring")
+- Denislav Valev
+  . Fix issue #7 ("Summon Pet Scroll forgets everything about your pet")
