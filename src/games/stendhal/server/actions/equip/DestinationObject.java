@@ -314,7 +314,7 @@ class DestinationObject extends MoveableObject {
 	 */
 	
 	public void addToWorld(Entity entity, final Player player) {
-		addToWorld(entity, player, true);
+		this.addToWorld(entity, player, true);
 	}
 	
 	public void addToWorld(Entity entity, final Player player, boolean tryCombineStack) {
