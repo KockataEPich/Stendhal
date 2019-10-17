@@ -148,7 +148,7 @@ public class RainbowBeansTest {
 		en.step(player, "hi");
 		assertEquals("Oi, you. Back for more rainbow beans?", getReply(npc));
 		en.step(player, "no");
-		assertEquals("Aight, ain't for everyone. Anythin else you want, you say so.", getReply(npc));
+		assertEquals("Alright, ain't for everyone. Anythin else you want, you say so.", getReply(npc));
 		en.step(player, "bye");
 		assertEquals("Bye.", getReply(npc));
 
