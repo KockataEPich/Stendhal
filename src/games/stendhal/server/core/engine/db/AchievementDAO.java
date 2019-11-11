@@ -14,16 +14,22 @@ package games.stendhal.server.core.engine.db;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import games.stendhal.server.core.rp.achievement.Achievement;
+import games.stendhal.server.entity.item.NewsAchievement;
 import marauroa.server.db.DBTransaction;
 import marauroa.server.db.TransactionPool;
+
 /**
  * DAO to handle achievements for the stendhal website
+ * 
  * @author madmetzger
  *
  */
@@ -33,7 +39,7 @@ public class AchievementDAO {
 	 * logs a reached achievement into the database
 	 *
 	 * @param achievementId id of achievement
-	 * @param playerName name of player
+	 * @param playerName    name of player
 	 * @throws SQLException in case of an database error
 	 */
 	public void saveReachedAchievement(Integer achievementId, String playerName) throws SQLException {
@@ -45,15 +51,15 @@ public class AchievementDAO {
 	/**
 	 * logs a reached achievement into the database
 	 *
-	 * @param transaction DBTransaction
+	 * @param transaction   DBTransaction
 	 * @param achievementId id of achievement
-	 * @param playerName name of player
+	 * @param playerName    name of player
 	 * @throws SQLException in case of an database error
 	 */
-	public void saveReachedAchievement(DBTransaction transaction, Integer achievementId, String playerName) throws SQLException {
-		String query  = "INSERT INTO reached_achievement " +
-						"(charname, achievement_id) VALUES" +
-						"('[charname]','[achievement_id]');";
+	public void saveReachedAchievement(DBTransaction transaction, Integer achievementId, String playerName)
+			throws SQLException {
+		String query = "INSERT INTO reached_achievement " + "(charname, achievement_id) VALUES"
+				+ "('[charname]','[achievement_id]');";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("charname", playerName);
 		parameters.put("achievement_id", achievementId);
@@ -84,9 +90,9 @@ public class AchievementDAO {
 	 */
 	public int insertAchievement(DBTransaction transaction, Achievement achievement) throws SQLException {
 		int achievementId = 0;
-		String query = 	"INSERT INTO achievement " +
-						"(identifier, title, category, description, base_score, active) VALUES " +
-						"('[identifier]','[title]','[category]', '[description]', [base_score], [active])";
+		String query = "INSERT INTO achievement "
+				+ "(identifier, title, category, description, base_score, active) VALUES "
+				+ "('[identifier]','[title]','[category]', '[description]', [base_score], [active])";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("identifier", achievement.getIdentifier());
 		parameters.put("title", achievement.getTitle());
@@ -102,7 +108,7 @@ public class AchievementDAO {
 	/**
 	 * Updates the achievement with the given id
 	 *
-	 * @param id id of achievement
+	 * @param id          id of achievement
 	 * @param achievement Achievement
 	 * @throws SQLException in case of an database error
 	 */
@@ -116,19 +122,14 @@ public class AchievementDAO {
 	 * Updates the achievement with the given id
 	 *
 	 * @param transaction DBTransaction
-	 * @param id id of achievement
+	 * @param id          id of achievement
 	 * @param achievement Achievement
 	 * @throws SQLException in case of an database error
 	 */
 	public void updateAchievement(DBTransaction transaction, Integer id, Achievement achievement) throws SQLException {
-		String query = "UPDATE achievement SET " +
-						"identifier = '[identifier]', " +
-						"title = '[title]', " +
-						"category = '[category]', " +
-						"description = '[description]', " +
-						"base_score = [base_score], " +
-						"active = [active] " +
-						"WHERE id = [id];";
+		String query = "UPDATE achievement SET " + "identifier = '[identifier]', " + "title = '[title]', "
+				+ "category = '[category]', " + "description = '[description]', " + "base_score = [base_score], "
+				+ "active = [active] " + "WHERE id = [id];";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("identifier", achievement.getIdentifier());
 		parameters.put("title", achievement.getTitle());
@@ -190,20 +191,49 @@ public class AchievementDAO {
 	 * Loads all achievements a player has reached
 	 *
 	 * @param transaction DBTransaction
-	 * @param playerName name of player
+	 * @param playerName  name of player
 	 * @return set identifiers of achievements reached by playerName
 	 * @throws SQLException in case of an database error
 	 */
-	public Set<String> loadAllReachedAchievementsOfPlayer(DBTransaction transaction, String playerName) throws SQLException {
+	public Set<String> loadAllReachedAchievementsOfPlayer(DBTransaction transaction, String playerName)
+			throws SQLException {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("playername", playerName);
 		String query = "SELECT identifier FROM achievement a JOIN reached_achievement ra ON ra.achievement_id = a.id WHERE ra.charname = '[playername]';";
 		ResultSet resultSet = transaction.query(query, params);
 		Set<String> identifiers = new HashSet<String>();
-		while(resultSet.next()) {
+		while (resultSet.next()) {
 			identifiers.add(resultSet.getString(1));
 		}
 		return identifiers;
+	}
+
+	public List<NewsAchievement> getTodaysNewsAchievements() throws SQLException {
+		DBTransaction transaction = TransactionPool.get().beginWork();
+		List<NewsAchievement> list = getTodaysNewsAchievements(transaction);
+		TransactionPool.get().commit(transaction);
+		return list;
+	}
+
+	public List<NewsAchievement> getTodaysNewsAchievements(DBTransaction transaction) throws SQLException {
+		String query = 
+//				"SELECT title, charname, timedate, base_score ",
+				"SELECT * "
+				+ "FROM achievement a JOIN reached_achievement ra ON ra.achievement_id = a.id "
+				+ "WHERE timedate > DATEADD('day', -1, NOW()) ";
+
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		List<NewsAchievement> list = new ArrayList<NewsAchievement>();
+		transaction.execute(query, parameters);
+		ResultSet set = transaction.query(query, new HashMap<String, Object>());
+		while (set.next()) {
+			String title = set.getString("title");
+			String playerName = set.getString("charname");
+			Timestamp timestamp = set.getTimestamp("timedate");
+			Integer score = set.getInt("base_score");
+			list.add(new NewsAchievement(title, playerName, timestamp.toLocalDateTime(), score));
+		}
+		return list;
 	}
 
 }
