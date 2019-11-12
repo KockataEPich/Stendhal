@@ -17,7 +17,12 @@ import marauroa.server.game.db.DAORegister;
 public class DailyPost extends Item {
 	private static final Logger logger = Logger.getLogger(DailyPost.class);
 
-	public DailyPost(Item item) {
+	/**
+	 * Copy constructor.
+	 *
+	 * @param item item to copy
+	 */
+	public DailyPost(final DailyPost item) {
 		super(item);
 	}
 
