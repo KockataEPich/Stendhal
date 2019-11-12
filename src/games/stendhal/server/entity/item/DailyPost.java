@@ -29,16 +29,16 @@ public class DailyPost extends Item {
 	@Override
 	public boolean onUsed(RPEntity user) {
 		AchievementDAO dao = DAORegister.get().get(AchievementDAO.class);
-		List<NewsAchievement> todaysAcheivements;
+		List<NewsAchievement> todaysachievements;
 		try {
-			todaysAcheivements = dao.getTodaysNewsAchievements();
-			Collections.sort(todaysAcheivements, Collections.reverseOrder());
-			List<NewsAchievement> top3Acheivements = todaysAcheivements.subList(0,
-					Math.min(3, todaysAcheivements.size()));
+			todaysachievements = dao.getTodaysNewsAchievements();
+			Collections.sort(todaysachievements, Collections.reverseOrder());
+			List<NewsAchievement> top3achievements = todaysachievements.subList(0,
+					Math.min(3, todaysachievements.size()));
 
-			String description = "";
-			for (NewsAchievement a : top3Acheivements) {
-				description += a.toString() + "\n";
+			String description = "Top 3 achievements from the last 24 hours:\n";
+			for (int i = 0; i < top3achievements.size(); i++) {
+				description += String.format("%d: %s\n", i, top3achievements.get(i).toString());
 			}
 
 			user.addEvent(new ExamineEvent("newspaper_popup.png", "The Stendhal Daily Post", ""));
