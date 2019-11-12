@@ -62,7 +62,7 @@ public class Lon_JathamTest extends ZonePlayerAndNPCTestImpl {
 				getReply(npc));
 		en.step(player, "job");
 		assertTrue(npc.isTalking());
-		assertEquals("I can teach you java.I am java wizard.", getReply(npc));
+		assertEquals("I can teach you java. I am java wizard.", getReply(npc));
 		en.step(player, "bye");
 		assertFalse(npc.isTalking());
 		assertEquals("Bye! Have a great time and don't forget about the coffee time.", getReply(npc));
