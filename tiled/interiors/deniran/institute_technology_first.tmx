@@ -39,7 +39,7 @@
  </layer>
  <layer name="2_object" width="21" height="10">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgoC1IIJEmBGLxYFwgHA2TAwKAOBCIg6hoZjAQhwBxKBXNRAe0MBMZxNDATHxxiQwSSKRpCQAF01j7SAMAAA==
+   H4sIAAAAAAAAA2NgoC1IIJEmBGLxYFwgHA2TAwKAOBCIg6hoZjAQhwBxKBXNRAe0MBMZxNDATHxxiQziSaRpCQBSxQWxSAMAAA==
   </data>
  </layer>
  <layer name="3_roof" width="21" height="10">
@@ -52,7 +52,7 @@
    H4sIAAAAAAAAA2NgGAWjYBRQCgAhUXGlSAMAAA==
   </data>
  </layer>
- <layer name="objects" width="21" height="10">
+ <layer name="objects" width="21" height="10" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBRQCgAhUXGlSAMAAA==
   </data>

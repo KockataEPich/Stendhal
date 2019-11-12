@@ -120,8 +120,6 @@
 			<destination zone="int_deniran_castle" ref="entrance_right" />
 			<attribute name="move.continuous" />
 		</portal>
-		<configurator class-name="games.stendhal.server.maps.deniran.Lon_Jatham" />
-
 
 	</zone>
 
@@ -687,6 +685,8 @@
 			<destination zone="int_deniran_institute_first" ref="stairs_upper" />
 			<attribute name="move.continuous" />
 		</portal>
+		
+		<configurator class-name="games.stendhal.server.maps.deniran.Lon_Jatham" />
 
 	</zone>
 	

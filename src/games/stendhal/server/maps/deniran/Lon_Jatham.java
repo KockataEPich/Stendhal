@@ -23,17 +23,17 @@ public class Lon_Jatham implements ZoneConfigurator  {
 	    	@Override
         protected void createPath() {
 	               List<Node> nodes=new LinkedList<Node>();
-	                nodes.add(new Node(63,6));
-	                nodes.add(new Node(60,6));
+	                nodes.add(new Node(9,6));
+	                nodes.add(new Node(15,6));
 	                setPath(new FixedPath(nodes,true));
         }
 
 	    	@Override
         protected void createDialog() {
-            // Lets the NPC reply with "Hallo" when a player greets him. But we could have set a custom greeting inside the ()
+            // Lets the NPC reply with "Hello" when a player greets him. But we could have set a custom greeting inside the ()
             addGreeting("Hello, I am the famous lecturer Lon Jatham. You are just in time.");
             // Lets the NPC reply when a player says "job"
-            addJob("I can teach you java.I am java wizard.");
+            addJob("I can teach you java. I am java wizard.");
             // use standard goodbye, but you can also set one inside the ()
             addGoodbye("Bye! Have a great time and don't forget about the coffee time.");
         }
@@ -44,7 +44,7 @@ public class Lon_Jatham implements ZoneConfigurator  {
     // set a description for when a player does 'Look'
     npc.setDescription("You see Mr Lon Jatham, he looks a a bit busy at the moment but perhaps he can help you anyway.");
     // Set the initial position to be the first node on the Path you defined above.
-    npc.setPosition(63, 6);
+    npc.setPosition(12, 6);
     npc.initHP(100);
 
     zone.add(npc);   
