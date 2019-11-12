@@ -133,6 +133,19 @@
 			<parameter name="color_method">time</parameter>
 			<parameter name="weather">varying</parameter>
 		</attributes>
+		
+		<entity x="57" y="77">
+			<implementation class-name="games.stendhal.server.entity.mapstuff.sign.Sign" />
+			<attribute name="text">Deniran Institute of Technology!</attribute>
+			<attribute name="width">1</attribute>
+			<attribute name="height">1</attribute>
+			<attribute name="class">transparent</attribute>
+		</entity>
+
+		<portal x="55" y="77" ref="deniran_institute_entrance">
+			<destination zone="int_deniran_institute_ground" ref="entrance"/>
+			<attribute name="move.continuous" />
+		</portal>
 
 	</zone>
 
@@ -658,6 +671,29 @@
 
 		<portal x="16" y="22" ref="entrance_right">
 			<destination zone="0_deniran" ref="deniran_castle_entrance_right" />
+			<attribute name="move.continuous" />
+		</portal>
+
+	</zone>
+	
+	<zone name="int_deniran_institute_ground" file="interiors/deniran/institute_technology_ground.tmx">
+
+		<portal x="12" y="8" ref="entrance">
+			<destination zone="0_deniran_s" ref="deniran_institute_entrance" />
+			<attribute name="move.continuous" />
+		</portal>
+
+		<portal x="12" y="5" ref="stairs_lower">
+			<destination zone="int_deniran_institute_first" ref="stairs_upper" />
+			<attribute name="move.continuous" />
+		</portal>
+
+	</zone>
+	
+	<zone name="int_deniran_institute_first" file="interiors/deniran/institute_technology_first.tmx">
+
+		<portal x="12" y="3" ref="stairs_upper">
+			<destination zone="int_deniran_institute_ground" ref="stairs_lower" />
 			<attribute name="move.continuous" />
 		</portal>
 
