@@ -49,7 +49,7 @@ public class DailyPost extends Item {
 
 			String achievementsText;
 			if (top3achievements.size() == 0) {
-				achievementsText = "No achievements have been completed in the last 24 hours";
+				achievementsText = "No achievements have been completed in the last 24 hours\n";
 			} else {
 				achievementsText = "Top 3 achievements from the last 24 hours:\n";
 				for (int i = 0; i < top3achievements.size(); i++) {
@@ -58,7 +58,7 @@ public class DailyPost extends Item {
 			}
 
 			String newspaperText = "The Stendhal Daily Post is brought to you by Xoderos's Tool Shop in Semos\n"
-					+ achievementsText + "Classified ads: \n" + "NOT YET IMPLEMENTED";
+					+ achievementsText + "Classified ads:\n" + "NOT YET IMPLEMENTED";
 
 			// Open the popup window and write the newspaper contents into the player's chat
 			// log

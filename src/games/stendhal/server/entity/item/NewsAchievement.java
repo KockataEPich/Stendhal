@@ -16,8 +16,7 @@ public class NewsAchievement implements Comparable<NewsAchievement> {
 	}
 
 	public String toString() {
-		return String.format("%s completed the '%s' achievement on %s at %s", this.playerName, this.title,
-				this.timestamp.toLocalDate().toString(), this.timestamp.toLocalTime().toString());
+		return String.format("%s completed the '%s' achievement", this.playerName, this.title);
 	}
 
 	public String getTitle() {
@@ -39,5 +38,6 @@ public class NewsAchievement implements Comparable<NewsAchievement> {
 	@Override
 	public int compareTo(NewsAchievement other) {
 		return this.score - other.score;
+
 	}
 }

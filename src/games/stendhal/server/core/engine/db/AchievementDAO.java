@@ -216,11 +216,10 @@ public class AchievementDAO {
 	}
 
 	public List<NewsAchievement> getTodaysNewsAchievements(DBTransaction transaction) throws SQLException {
-		String query = 
+		String query =
 //				"SELECT title, charname, timedate, base_score ",
-				"SELECT * "
-				+ "FROM achievement a JOIN reached_achievement ra ON ra.achievement_id = a.id "
-				+ "WHERE timedate > DATEADD('day', -1, NOW()) ";
+				"SELECT * " + "FROM achievement a JOIN reached_achievement ra ON ra.achievement_id = a.id "
+						+ "WHERE timedate > DATEADD('day', -1, NOW()) ";
 
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		List<NewsAchievement> list = new ArrayList<NewsAchievement>();
@@ -234,6 +233,18 @@ public class AchievementDAO {
 			list.add(new NewsAchievement(title, playerName, timestamp.toLocalDateTime(), score));
 		}
 		return list;
+	}
+	
+	public void resetReachedAchievements() throws SQLException {
+		DBTransaction transaction = TransactionPool.get().beginWork();
+		resetReachedAchievements(transaction);
+		TransactionPool.get().commit(transaction);
+	}
+
+	public void resetReachedAchievements(DBTransaction transaction) throws SQLException {
+		String query = "DELETE FROM reached_achievement";
+		Map<String, Object> parameters = new HashMap<String, Object>();	
+		transaction.execute(query, parameters);
 	}
 
 }
