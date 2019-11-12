@@ -36,13 +36,23 @@ public class DailyPost extends Item {
 			List<NewsAchievement> top3achievements = todaysachievements.subList(0,
 					Math.min(3, todaysachievements.size()));
 
-			String description = "Top 3 achievements from the last 24 hours:\n";
-			for (int i = 0; i < top3achievements.size(); i++) {
-				description += String.format("%d: %s\n", i, top3achievements.get(i).toString());
+			String achievementsText;
+			if (top3achievements.size() == 0) {
+				achievementsText = "No achievements have been completed in the last 24 hours";
+			} else {
+				achievementsText = "Top 3 achievements from the last 24 hours:\n";
+				for (int i = 0; i < top3achievements.size(); i++) {
+					achievementsText += String.format("%d: %s\n", i + 1, top3achievements.get(i).toString());
+				}
 			}
 
+			String newspaperText = "The Stendhal Daily Post is brought to you by Xoderos's Tool Shop in Semos\n"
+					+ achievementsText + "Classified ads: \n" + "NOT YET IMPLEMENTED";
+
+			// Open the popup window and write the newspaper contents into the player's chat
+			// log
 			user.addEvent(new ExamineEvent("newspaper_popup.png", "The Stendhal Daily Post", ""));
-			user.addEvent(new PrivateTextEvent(NotificationType.NORMAL, description));
+			user.addEvent(new PrivateTextEvent(NotificationType.NORMAL, newspaperText));
 			user.notifyWorldAboutChanges();
 		} catch (SQLException e) {
 			logger.error(e);
