@@ -31,8 +31,14 @@ public class DailyPost extends Item {
 		AchievementDAO dao = DAORegister.get().get(AchievementDAO.class);
 		List<NewsAchievement> todaysachievements;
 		try {
+			// Get all achievements that have been completed in the last 24 hours.
 			todaysachievements = dao.getTodaysNewsAchievements();
+
+			// Sort them in descending order (i.e. achievements with highest score first).
 			Collections.sort(todaysachievements, Collections.reverseOrder());
+
+			// Take the first 3 achievements, or the whole list if less than 3 achievements
+			// have been completed today.
 			List<NewsAchievement> top3achievements = todaysachievements.subList(0,
 					Math.min(3, todaysachievements.size()));
 
