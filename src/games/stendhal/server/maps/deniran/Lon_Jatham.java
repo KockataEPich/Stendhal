@@ -1,5 +1,6 @@
 package games.stendhal.server.maps.deniran;
 import games.stendhal.server.entity.npc.SpeakerNPC;
+import games.stendhal.server.entity.npc.action.EquipItemAction;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -34,6 +35,8 @@ public class Lon_Jatham implements ZoneConfigurator  {
             addGreeting("Hello, I am the famous lecturer Lon Jatham. You are just in time.");
             // Lets the NPC reply when a player says "job"
             addJob("I can teach you java. I am java wizard.");
+            // Get a prospectus in the bag if you ask for one.
+            addReply("Can I have a prospectus ?","Sure. Here you can have a prospectus.",new EquipItemAction("prospectus", 1));
             // use standard goodbye, but you can also set one inside the ()
             addGoodbye("Bye! Have a great time and don't forget about the coffee time.");
         }
