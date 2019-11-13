@@ -34,7 +34,6 @@ public class Lon_JathamTest extends ZonePlayerAndNPCTestImpl {
 		addZoneConfigurator(new Lon_Jatham(), ZONE_NAME);
 	}
 	 // Tests for hiAndBye.
-	 
 	@Test
 	public void testHiAndBye() {
 
@@ -49,6 +48,7 @@ public class Lon_JathamTest extends ZonePlayerAndNPCTestImpl {
 		assertEquals("Bye! Have a great time and don't forget about the coffee time.", getReply(npc));
 	}
 	 
+	// Test for hiAndJob
 	@Test
 	public void testHiAndJob() {
 
@@ -66,6 +66,23 @@ public class Lon_JathamTest extends ZonePlayerAndNPCTestImpl {
 		en.step(player, "bye");
 		assertFalse(npc.isTalking());
 		assertEquals("Bye! Have a great time and don't forget about the coffee time.", getReply(npc));
+	}
+	
+	// Test for hi and ask for prospectus.
+	@Test 
+	public void testHiAndAskForProspectus(){
+		final SpeakerNPC npc = getNPC("Lon Jatham");
+		final Engine en = npc.getEngine();
+		
+		en.step(player, "hi");
+		assertTrue(npc.isTalking());
+		assertEquals(
+				"Hello, I am the famous lecturer Lon Jatham. You are just in time.",
+				getReply(npc));
+		assertTrue(en.step(player, "Can I have a prospectus ?"));
+		assertEquals("Sure. Here you can have a prospectus.", getReply(npc));
+		assertTrue(player.isEquipped("prospectus", 1));
+		
 	}
 
 		
