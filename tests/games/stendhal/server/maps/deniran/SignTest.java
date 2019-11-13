@@ -6,28 +6,17 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
-import org.junit.Before;
+
 import org.junit.Test;
 
-import games.stendhal.server.entity.Entity;
+
 import games.stendhal.server.entity.mapstuff.chest.Chest;
 import games.stendhal.server.entity.mapstuff.sign.Sign;
-import marauroa.common.game.RPClass;
+
 
 
 
 public class SignTest {
-	@Before
-	public void setUp() throws Exception {
-		if (!RPClass.hasRPClass("entity")) {
-			Entity.generateRPClass();
-		}
-
-		if (!RPClass.hasRPClass("sign")) {
-			Chest.generateRPClass();
-		}
-	}
-
 	@After
 	public void tearDown() throws Exception {
 	}
