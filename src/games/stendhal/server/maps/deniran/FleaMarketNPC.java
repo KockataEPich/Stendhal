@@ -35,6 +35,7 @@ public class FleaMarketNPC implements ZoneConfigurator {
 			@Override
 			protected void onGoodbye(RPEntity player) {
 				setDirection(Direction.DOWN);
+
 			}
 
 
