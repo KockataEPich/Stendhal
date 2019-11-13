@@ -106,42 +106,6 @@
 			<attribute name="class">transparent</attribute>
 		</entity>
 
-		<entity x="13" y="75">
-			<implementation class-name="games.stendhal.server.entity.mapstuff.sign.Sign" />
-			<attribute name="text">Welcome to FleaMarket, but it is still under development(open for amdins)!</attribute>
-			<attribute name="width">1</attribute>
-			<attribute name="height">1</attribute>
-		</entity>
-		
-		<entity x="46" y="81">
-			<implementation class-name="games.stendhal.server.entity.mapstuff.sign.Sign" />
-			<attribute name="text">Welcome to FleaMarket, but it is still under development(open for amdins)!</attribute>
-			<attribute name="width">1</attribute>
-			<attribute name="height">1</attribute>
-		</entity>
-
-		
-		<entity x="13" y="77">
-		    <implementation class-name="games.stendhal.server.entity.mapstuff.sign.ShopSign">
-		    <parameter name="shop">test_stall</parameter>
-	        <parameter name="title">This is a flea stall for test</parameter>
-	        <parameter name="seller">true</parameter>
-		    <parameter name="caption">Nobody is selling things</parameter>
-	        </implementation>
-            <attribute name="class">blackboard</attribute>
-        </entity>
-        
-       
-        
-            <entity x="10" y="77">
-      <implementation class-name="games.stendhal.server.entity.mapstuff.area.WalkBlocker" />
-      <attribute name="description">A nice clean stall table.</attribute>
-      <attribute name="width">4</attribute>
-      <attribute name="height">1</attribute>
-    </entity>
-		
-		     
-
 		<portal x="54" y="69" ref="deniran_bank_blue_roof_entrance">
 			<destination zone="int_deniran_bank_blue_roof" ref="entrance" />
 			<attribute name="move.continuous" />

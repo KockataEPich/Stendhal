@@ -1,34 +1,34 @@
 package games.stendhal.server.maps.deniran;
-import java.util.Map;
+/* $Id$ */
+/***************************************************************************
+ * 	This is a flea market npc which can sell 							   *
+ * 	you unwanted staff from other playser.								   *
+ * 	Arthur Heng.Gao 												   	   *
+ ***************************************************************************/
 
-import games.stendhal.common.Direction;
+
+import java.util.Map;
 import games.stendhal.server.core.config.ZoneConfigurator;
 import games.stendhal.server.core.engine.StendhalRPZone;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 
 
 public class FleaMarketNPC implements ZoneConfigurator {
-	/* $Id$ */
 	/**
-	 * An Flea Market Assistance who can be hired by player to manage players' flea stall.
-	 * It is just initialised.
+	 * Configure a zone.
+	 *
+	 * @param	zone		The zone to be configured.
+	 * @param	attributes	Configuration attributes.
 	 */
 
 	@Override
-	public void configureZone(StendhalRPZone zone,
-			Map<String, String> attributes) {
+	public void configureZone(final StendhalRPZone zone, final Map<String, String> attributes) {
 		buildNPC(zone);
 	}
 
+	
 	private void buildNPC(final StendhalRPZone zone) {
 		final SpeakerNPC npc = new SpeakerNPC("FM_test_NPC");
-		
-		npc.setPosition(10, 10);
-		npc.setEntityClass("oldmannpc");
-		npc.setDescription("Fleamarket assistant at the flea stall ");
-		npc.setDirection(Direction.DOWN);
 		zone.add(npc);
-	}
-	
-
+		}
 }
