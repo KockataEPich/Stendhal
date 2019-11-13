@@ -89,10 +89,6 @@
 
 	</zone>
 
-
-
-    		
-
 	<zone name="0_deniran" level="0" x="499232" y="500000"
 		file="Level 0/deniran/deniran.tmx">
 
@@ -101,6 +97,11 @@
 			<parameter name="weather">varying</parameter>
 		</attributes>
 
+		<entity x="11" y="77">
+			<implementation class-name="games.stendhal.server.entity.mapstuff.chest.StoredChest">
+			</implementation>
+		</entity>
+		
 		<entity x="54" y="68">
 			<implementation class-name="games.stendhal.server.entity.mapstuff.sign.Sign" />
 			<attribute name="text">Welcome to Deniran Bank!</attribute>
@@ -124,7 +125,7 @@
 		</entity>
 
 		
-		<entity x="13" y="77">
+		<entity x="12" y="77">
 		    <implementation class-name="games.stendhal.server.entity.mapstuff.sign.ShopSign">
 		    <parameter name="shop">test_stall</parameter>
 	        <parameter name="title">This is a flea stall for test</parameter>
