@@ -1,34 +1,52 @@
 package games.stendhal.server.maps.deniran;
-/* $Id$ */
-/***************************************************************************
- * 	This is a flea market npc which can sell 							   *
- * 	you unwanted staff from other playser.								   *
- * 	Arthur Heng.Gao 												   	   *
- ***************************************************************************/
-
-
 import java.util.Map;
+
+import games.stendhal.common.Direction;
 import games.stendhal.server.core.config.ZoneConfigurator;
 import games.stendhal.server.core.engine.StendhalRPZone;
+import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.npc.SpeakerNPC;
 
 
 public class FleaMarketNPC implements ZoneConfigurator {
+	/* $Id$ */
 	/**
-	 * Configure a zone.
+	 * An Flea Market Assistance who can be hired by player to manage players' flea stall.
 	 *
-	 * @param	zone		The zone to be configured.
-	 * @param	attributes	Configuration attributes.
+	 * @see games.stendhal.server.maps.quests.MeetMonogenes
+	 * @see games.stendhal.server.maps.quests.HatForMonogenes
 	 */
 
 	@Override
-	public void configureZone(final StendhalRPZone zone, final Map<String, String> attributes) {
+	public void configureZone(StendhalRPZone zone,
+			Map<String, String> attributes) {
 		buildNPC(zone);
 	}
 
-	
 	private void buildNPC(final StendhalRPZone zone) {
-		final SpeakerNPC npc = new SpeakerNPC("FM_test_NPC");
+		final SpeakerNPC npc = new SpeakerNPC("FM_test_NPC") {
+			@Override
+			public void createDialog() {
+				addGreeting("Welcome to the Flea Market.");
+ 				addGoodbye("Bye.");
+				// All further behaviour is defined in quest classes.
+			}
+
+			@Override
+			protected void onGoodbye(RPEntity player) {
+				setDirection(Direction.DOWN);
+			}
+
+
+
+		};
+		npc.setPosition(10, 10);
+		npc.setEntityClass("oldmannpc");
+		npc.setDescription("Fleamarket assistant at the flea stall ");
+		npc.setDirection(Direction.DOWN);
 		zone.add(npc);
-		}
+	}
+
 }
+
+

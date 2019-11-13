@@ -1,7 +1,6 @@
 package games.stendhal.server.maps.deniran;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static utilities.SpeakerNPCTestHelper.getReply;
 
@@ -62,58 +61,7 @@ import utilities.RPClass.ItemTestHelper;
 	}
 
 	/**
-	 * Tests for buyFlower.
+	 * Tests for buy second hand items.
 	 */
-	@Test
-	public void testBuyFlower() {
-		npc = SingletonRepository.getNPCList().get("FM_test_NPC");
-		en = npc.getEngine();
 
-		assertTrue(en.step(player, "hi"));
-		assertEquals("Hi! Are you here to #trade?", getReply(npc));
-
-		assertTrue(en.step(player, "job"));
-		assertEquals("I sell roses in this here market.", getReply(npc));
-
-		assertTrue(en.step(player, "trade"));
-		assertEquals("I sell rose.", getReply(npc));
-
-		// There is currently no quest response defined for Fleur.
-		assertFalse(en.step(player, "quest"));
-
-		assertTrue(en.step(player, "buy"));
-		assertEquals("please tell what item you prefer.", getReply(npc));
-		assertTrue(en.step(player, "no"));
-		assertEquals("Ok, how else may I help you?", getReply(npc));
-
-		assertTrue(en.step(player, "buy dog"));
-		assertEquals("Sorry, I don't sell dogs.", getReply(npc));
-
-		assertTrue(en.step(player, "buy candle"));
-		assertEquals("Sorry, I don't sell candles.", getReply(npc));
-
-		assertTrue(en.step(player, "buy a glass of wine"));
-		assertEquals("Sorry, I don't sell glasses of wine.", getReply(npc));
-
-		assertTrue(en.step(player, "buy rose"));
-		assertEquals("A rose will cost 50. Do you want to buy it?", getReply(npc));
-
-		assertTrue(en.step(player, "no"));
-		assertEquals("Ok, how else may I help you?", getReply(npc));
-
-		assertTrue(en.step(player, "buy rose"));
-		assertEquals("A rose will cost 50. Do you want to buy it?", getReply(npc));
-
-		assertTrue(en.step(player, "yes"));
-		assertEquals("Sorry, you don't have enough money!", getReply(npc));
-
-		assertTrue(en.step(player, "buy two roses"));
-		assertEquals("2 roses will cost 100. Do you want to buy them?", getReply(npc));
-
-		assertTrue(en.step(player, "yes"));
-		assertEquals("Sorry, you don't have enough money!", getReply(npc));
-		assertTrue(player.isEquipped("rose", 6));
-	}
-
-	
 }
