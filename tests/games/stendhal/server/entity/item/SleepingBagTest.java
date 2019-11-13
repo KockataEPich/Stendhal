@@ -31,7 +31,7 @@ public class SleepingBagTest
 	public void testCreation()
 	{
 
-		//initiate the player and the pet, put them both in the zone
+		// Create the player and the item
 		final Player testPlayer = PlayerTestHelper.createPlayer("testplayer");
 
 		final Item sleepingBag = SingletonRepository.getEntityManager().getItem("sleeping bag");
@@ -49,7 +49,7 @@ public class SleepingBagTest
 	public void testInflicts()
 	{
 
-		//initiate the player and the pet, put them both in the zone
+		// Create the player and the item
 		final Player testPlayer = PlayerTestHelper.createPlayer("testplayer");
 		final Item sleepingBag = SingletonRepository.getEntityManager().getItem("sleeping bag");
 
@@ -59,5 +59,20 @@ public class SleepingBagTest
 		assertEquals("You have fallen asleep!", PlayerTestHelper.getPrivateReply(testPlayer));
 
 		assertTrue(testPlayer.getStatusList().hasStatus(StatusType.SLEEPING));
- }//test
+	}//test
+	
+
+	/**
+	 * Tests for testing the image.
+	 */
+	@Test
+	public void testImage()
+	{
+		final Item sleepingBag = SingletonRepository.getEntityManager().getItem("sleeping bag");
+		String theImage = sleepingBag.getItemSubclass();
+
+		assertTrue(theImage.length() > 0);
+		assertTrue(theImage.equals(sleepingBag.getItemSubclass()));
+
+	}//testImage()
 }//class sleepingBagTest
