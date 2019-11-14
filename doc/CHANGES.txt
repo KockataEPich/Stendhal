@@ -1,6 +1,13 @@
 Changelog
 ---------
 ---------
+1.32
+*adds*
+- First release of Lon Jatham at the Deniran Institute of Technology
+- First release of Deniran Flea Market
+- First release of Sleeping bag
+- First release of Daily Post
+
 1.31
 *fixes*
 - Fix dialogue for rainbow bean seller

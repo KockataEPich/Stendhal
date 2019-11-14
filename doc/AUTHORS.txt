@@ -203,15 +203,22 @@ Notable contributors:
 
 - Konstadin Belchev
   . Fix issue #1 ("Rainbow Beans NPC's dialogue a bit mangled")
+  . Added feature #10 ("Sleeping bag feature")
 - Bodgan-Gabriel Tudor
   . Fix issue #2 ("Weightless Baby Dragons")
+  . Added feature #14 ("Lon Jatham at the Deniran Institute of Technology")
 - Karl Meakin
   . Fix issue #3 ("Stackable items on the keyring just wrong")
+  . Add feature #13 ("Daily Post")
 - Mario Kaymakanov
   . Fix issue #4 ("Travel log error for Emotion Crystals Quest")
-- Benjamin Piggot
+  . Add feature #9 ("Deniran Flea Market")
+- Benjamin Piggott
   . Fix issue #6 ("Fishmonger in Kirdneh is Missing a Fish")
+  . Added feature #14 ("Lon Jatham at the Deniran Institute of Technology")
 - Heng Gao
   . Fix issue #5 ("Mithril Clasp should go on key ring")
+  . Add feature #9 ("Deniran Flea Market")
 - Denislav Valev
   . Fix issue #7 ("Summon Pet Scroll forgets everything about your pet")
+  . Added feature #10 ("Sleeping bag feature")
