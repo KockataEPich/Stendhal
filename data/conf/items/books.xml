@@ -44,9 +44,24 @@
     <value value="1"/>
     <equipable>
       <slot name="ground"/>
+      <slot name="bag"/>
+    </equipable>
+  </item>
+  
+  <item name="prospectus">
+    <type class="book" subclass="prospectus" tileid="-1"/>
+    <description>You see the prospectus that Lon gave to you.</description>
+    <implementation class-name="games.stendhal.server.entity.item.Item"/>
+    <attributes>
+    </attributes>
+    <weight value="0.01"/>
+    <value value="1"/>
+    <equipable>
+      <slot name="ground"/>
       <slot name="content"/>
       <slot name="bag"/>
       <slot name="trade"/>
     </equipable>
   </item>
+
 </items>
