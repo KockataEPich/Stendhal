@@ -62,6 +62,7 @@ import games.stendhal.server.entity.mapstuff.portal.Portal;
 import games.stendhal.server.entity.player.Player;
 import games.stendhal.server.entity.slot.EntitySlot;
 import games.stendhal.server.entity.slot.Slots;
+import games.stendhal.server.entity.status.SleepStatus;
 import games.stendhal.server.entity.status.Status;
 import games.stendhal.server.entity.status.StatusAttacker;
 import games.stendhal.server.entity.status.StatusList;
@@ -1309,6 +1310,9 @@ System.out.printf("  drop: %2d %2d\n", attackerRoll, defenderRoll);
 		if (logger.isDebugEnabled() || Testing.DEBUG) {
 			logger.debug("Damaged " + damage + " points by " + attacker.getID());
 		}
+		
+		if(this.hasStatus(StatusType.SLEEPING))
+			{this.getStatusList().removeAll(SleepStatus.class);}
 
 		bleedOnGround();
 		if (attacker instanceof RPEntity) {
