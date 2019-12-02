@@ -1,0 +1,46 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="stendhal"
+	xmlns:tns="http://www.example.org/zones" elementFormDefault="qualified"
+	xmlns:Q1="stendhal">
+
+	<element name="achievements" type="Q1:achievementGroup"></element>
+
+	<complexType name="achievementGroup">
+		<sequence>
+			<element name="achievement" type="Q1:achievementType" minOccurs="0"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="achievementType">
+		<sequence>
+			<element name="identifier" type="string" />
+			<element name="title" type="string"></element>
+			<!--finish the category-->
+			<element name="category" type="Q1:Category"  minOccurs="0" maxOccurs="1"></element>
+			<element name="description" type="string"></element>
+			<element name="score" type="int"></element>
+			<element name="active" type="boolean"></element>
+			<!--FInish the chat condition-->
+			<element name="condition" type="Q1:ChatCondition"></element>
+		</sequence>
+		<!--Should attribute name be included-->
+		<!--<attribute name="name" type="string" use="required"></attribute>-->
+	</complexType>
+	<!--FInish here, should they even be here?-->
+	<complexType name="Category">
+		<attribute name="class" type="string"></attribute>
+		<attribute name="subclass" type="string"></attribute>
+		<attribute name="tileid" type="int"></attribute>
+	</complexType>
+
+	<complexType name="ChatCondition">
+		<sequence>
+			<element name="parameter" type="Q1:pair" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="class-name" type="string"/>
+	</complexType>
+	
+	<complexType name="implementation">
+		<attribute name="class-name" type="string"></attribute>
+	</complexType>
+</schema>

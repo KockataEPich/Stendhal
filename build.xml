@@ -275,6 +275,8 @@
 				<include name="creatures/*.xml"/>
 				<include name="items.xml"/>
 				<include name="items/*.xml"/>
+				<include name="achievements.xml"/>
+				<include name="achievements/*.xml"/>
 				<include name="zones.xml"/>
 				<include name="zones/*.xml"/>
 				<include name="riddles-example.xml"/>
@@ -1085,10 +1087,17 @@ d = 9017093486007323270605414717455737376618092805104733236083857811315606869372
 			</fileset>
 		</schemavalidate>
 		<schemavalidate>
+			<schema namespace="stendhal" file="${config_dir}/achievements.xsd" />
+			<fileset dir="data/conf/achievements">
+				<include name="*.xml"/>
+			</fileset>
+		</schemavalidate>
+		<schemavalidate>
 			<schema namespace="stendhal" file="${config_dir}/groups.xsd"/>
 			<fileset dir="${config_dir}">
 				<filename name="zones.xml"/>
 				<filename name="items.xml"/>
+				<filename name="achievements.xml"/>
 				<filename name="creatures.xml"/>
 			</fileset>
 		</schemavalidate>
