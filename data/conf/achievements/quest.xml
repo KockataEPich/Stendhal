@@ -1,36 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<items xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="stendhal ../items.xsd ">
-	<!-- Weapons that can be given to creatures to adjust their rate of attack,
-	without giving them a visible weapon. These should never be seen as actual
-	items in the game. -->
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
 
-  <item name="dummy_ranged">
-    <type class="ranged" subclass="dummy_ranged" tileid="-1"/>
-    <description>Ranged weapon. This description should not be seen.</description>
-    <implementation class-name="games.stendhal.server.entity.item.DummyWeapon"/>
-    <attributes>
-      <atk value="12"/>
-      <range value="3"/>
-    </attributes>
-    <weight value="1.0"/>
-    <value value="1"/>
-    <equipable>
-    </equipable>
-  </item>
+  <achievement>
+    <identifier>"quest.special.elf_princess.0025"</identifier>
+    <title>"Faiumoni's Casanova"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Finish elf princess quest 25 times"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"elf_princess"</param1>
+     <param2>2</param2>
+     <param3>24</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.kill_monks.0025"</identifier>
+    <title>"Heretic"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Finish Kill Monks quest 25 times"</description>
+    <score>5</score>
+    <active>true</active>
+    <condition>
+     <param1>"kill_monks"</param1>
+     <param2>2</param2>
+     <param3>24</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.maze"</identifier>
+    <title>"Pathfinder"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Finish the maze"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>"maze"</param1>
+     <param2>2</param2>
+     <param3>24</param3>
+    </condition>
+  </achievement>
+  
 
-  <item name="dummy_melee_8">
-    <type class="club" subclass="dummy_melee_8" tileid="-1"/>
-    <description>Ranged weapon. This description should not be seen.</description>
-    <implementation class-name="games.stendhal.server.entity.item.DummyWeapon"/>
-    <attributes>
-      <atk value="22"/>
-      <range value="8"/>
-    </attributes>
-    <weight value="1.0"/>
-    <value value="1"/>
-    <equipable>
-    </equipable>
-  </item>
+  <achievement>
+    <identifier>"quest.deathmatch"</identifier>
+    <title>"Deathmatch Hero"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Earn 100,000 points in deathmatch"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"deathmatch_score"</param1>
+     <param2>0</param2>
+     <param3>100000</param3>
+    </condition>
+  </achievement>
+    
+  <achievement>
+    <identifier>"quest.special.semos"</identifier>
+    <title>"Aide to Semos folk"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Complete all quests in Semos City"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"Region.SEMOS_CITY"</param1>
+    </condition>
+  </achievement>
+  
+				
+	<achievement>
+    <identifier>"quest.special.ados"</identifier>
+    <title>"Helper of Ados city dwellers"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Complete all quests in Ados City"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"Region.ADOS_CITY"</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.count.80"</identifier>
+    <title>"Quest Junkie"</title>
+    <category>
+      <whatCategory>QUEST</whatCategory>
+    </category>
+    <description>"Complete at least 80 quests"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"80"</param1>
+    </condition>
+  </achievement>
 
-</items>
+</achievements>

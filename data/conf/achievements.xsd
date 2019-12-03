@@ -21,36 +21,27 @@
 			<element name="score" type="xsd:decimal"></element>
 			<element name="active" type="boolean"></element>
 			<!--FInish the chat condition-->
-			<element name="condition" type="Q1:ChatCondition"></element>
+			<element name="condition" type="Q1:Condition"></element>
 		</sequence>
 		<!--Should attribute name be included-->
 		<!--attribute name="name" type="string" use="required"></attribute-->
 	</complexType>
 	<!--FInish here, should they even be here?-->
 	<complexType name="Category">
-		<xsd:enumeration value = "EXPERIENCE"/>
-		<xsd:enumeration value = "FIGHTING"/>
-		<xsd:enumeration value = "QUEST"/>
-		<xsd:enumeration value = "OUTSIDE_ZONE"/>
-		<xsd:enumeration value = "UNDERGROUND_ZONE"/>
-		<xsd:enumeration value = "INTERIOR_ZONE"/>
-		<xsd:enumeration value = "AGE"/>
-		<xsd:enumeration value = "ITEM"/>
-		<xsd:enumeration value = "OBTAIN"/>
-		<xsd:enumeration value = "FRIEND"/>
-		<xsd:enumeration value = "PRODUCTION"/>
-		<xsd:enumeration value = "QUEST_ADOS_ITEMS"/>
-		<xsd:enumeration value = "QUEST_SEMOS_MONSTER"/>
-		<xsd:enumeration value = "QUEST_KIRDNEH_ITEM"/>
-		<xsd:enumeration value = "QUEST_MITHRILBOURGH_ENEMY_ARMY"/>
+		<element "whatCategory" type="string"/>
 	</complexType>
 
-	<complexType name="ChatCondition">
+	<complexType name="Condition">
 		<sequence>
-			<element name="questname" type="xsd:string"/>
-			<element name="index" type="xsd:decimal"/>
-			<element name="expectedSmallerValue" type="xsd:decimal"/>
+			<element name="param1" type="xsd:string"/>
+			<element name="param2" type="xsd:string"/>
+			<element name="param3" type="xsd:string"/>
+			<element name="param4" type="xsd:string"/>
+			<element name="param5" type="xsd:string"/>
 		</sequence>
+		
+		
+
 		<attribute name="class-name" type="string"/>
 	</complexType>
 	
