@@ -1080,7 +1080,16 @@ d = 9017093486007323270605414717455737376618092805104733236083857811315606869372
 				<include name="*.xml" />
 			</fileset>
 		</schemavalidate>
+		
 		<schemavalidate>
+			<schema namespace="stendhal" file="${config_dir}/achievements.xsd" />
+				<fileset dir="${config_dir}/achievements">
+					<include name="*.xml" />
+				</fileset>
+			</schemavalidate>
+		
+		<schemavalidate>
+			
 			<schema namespace="stendhal" file="${config_dir}/items.xsd" />
 			<fileset dir="data/conf/items">
 				<include name="*.xml"/>
