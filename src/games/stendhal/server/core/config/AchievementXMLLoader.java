@@ -32,5 +32,9 @@ public final class AchievementXMLLoader extends DefaultHandler {
 	public Collection<Achievement> load(URI uri) {
 		return null;
 	}
+	
+	public Collection<Achievement> load() {
+		return null;
+	}
 }
 
