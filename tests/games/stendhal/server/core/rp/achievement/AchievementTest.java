@@ -47,12 +47,16 @@ public class AchievementTest {
 	
 	@Test
 	public void createAchievementTest()
-	{
+	{ 
 		
+		//Create a new player for the test.
 		final Player player = PlayerTestHelper.createPlayer("dave");
+		//Add the player to the zone
 		zone.add(player);
+		//Create a new achievement.
 		Achievement newAchievement = new Achievement("identifier", "title", Category.FIGHTING,
 							"description", 4, true, new KilledSoloAllCreaturesCondition());
+		// Check all the attributes of the achievement.
 		assertThat(newAchievement.getIdentifier(), is("identifier"));
 		assertThat(newAchievement.getCategory(), is(Category.FIGHTING));
 		assertThat(newAchievement.getDescription(), is("description"));
@@ -68,11 +72,13 @@ public class AchievementTest {
 	@Test
 	public void createAchievementTest2()
 	{
-		
+		//Create a new player for the test.
 		final Player player = PlayerTestHelper.createPlayer("dave");
+		//Add the player to the zone
 		zone.add(player);
 		Achievement newAchievement = new Achievement("identifier", "title", Category.FIGHTING,
 							"description", 4, true, new KilledRareCreatureCondition());
+		// Check all the attributes of the achievement.
 		assertThat(newAchievement.getIdentifier(), is("identifier"));
 		assertThat(newAchievement.getCategory(), is(Category.FIGHTING));
 		assertThat(newAchievement.getDescription(), is("description"));
@@ -84,5 +90,6 @@ public class AchievementTest {
 			
 		
 	}
+	
 
 }
