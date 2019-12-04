@@ -17,8 +17,8 @@
 			<element name="title" type="string"></element>
 			<!--finish the category-->
 			<element name="category" type="Q1:Category"  minOccurs="0" maxOccurs="1"></element>
-			<element name="description" type="xsd:string"></element>
-			<element name="score" type="xsd:decimal"></element>
+			<element name="description" type="string"></element>
+			<element name="score" type="decimal"></element>
 			<element name="active" type="boolean"></element>
 			<!--FInish the chat condition-->
 			<element name="condition" type="Q1:Condition"></element>
@@ -28,21 +28,20 @@
 	</complexType>
 	<!--FInish here, should they even be here?-->
 	<complexType name="Category">
-		<element "whatCategory" type="string"/>
+	 <sequence>
+		<element name="whatCategory" type="string"/>
+	 </sequence>
 	</complexType>
 
 	<complexType name="Condition">
 		<sequence>
-			<element name="param1" type="xsd:string"/>
-			<element name="param2" type="xsd:string"/>
-			<element name="param3" type="xsd:string"/>
-			<element name="param4" type="xsd:string"/>
-			<element name="param5" type="xsd:string"/>
+			<element name="param1" type="string" minOccurs="0"/>
+			<element name="param2" type="string" minOccurs="0"/>
+			<element name="param3" type="string" minOccurs="0"/>
+			<element name="param4" type="string" minOccurs="0"/>
+			<element name="param5" type="string" minOccurs="0"/>
 		</sequence>
+		</complexType>
 		
-		
-
-		<attribute name="class-name" type="string"/>
-	</complexType>
 	
 </schema>
