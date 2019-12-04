@@ -21,8 +21,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public final class AchievementXMLLoader extends DefaultHandler {
 
-	public AchievementXMLLoader() {
-		return;
+	protected URI uri;
+
+	public AchievementXMLLoader(final URI uri) {
+		this.uri = uri;
 	}
 
 	public Collection load(URI uri) {
