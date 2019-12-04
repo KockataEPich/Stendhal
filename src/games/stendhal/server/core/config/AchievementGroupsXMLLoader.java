@@ -17,6 +17,8 @@ import java.util.List;
 
 import org.xml.sax.helpers.DefaultHandler;
 
+import games.stendhal.server.core.rp.achievement.Achievement;
+
 /**
  * XML based loader of achievement groups
  *
@@ -31,7 +33,7 @@ public class AchievementGroupsXMLLoader extends DefaultHandler {
 		this.uri = uri;
 	}
 
-	public List load() {
+	public List<Achievement> load() {
 		return null;
 	}
 

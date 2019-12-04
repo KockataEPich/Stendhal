@@ -18,6 +18,8 @@ import java.util.Collection;
 
 import org.xml.sax.helpers.DefaultHandler;
 
+import games.stendhal.server.core.rp.achievement.Achievement;
+
 
 public final class AchievementXMLLoader extends DefaultHandler {
 
@@ -27,7 +29,7 @@ public final class AchievementXMLLoader extends DefaultHandler {
 		this.uri = uri;
 	}
 
-	public Collection load(URI uri) {
+	public Collection<Achievement> load(URI uri) {
 		return null;
 	}
 }
