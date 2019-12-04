@@ -23,7 +23,9 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 
+
 /**
+ * 
  * XML based loader of achievement groups
  *
  * @author

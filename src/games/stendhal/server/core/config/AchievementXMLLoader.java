@@ -30,7 +30,6 @@ import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-
 import games.stendhal.server.core.rp.achievement.Category;
 import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 
