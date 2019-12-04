@@ -20,9 +20,10 @@ import org.xml.sax.helpers.DefaultHandler;
 import games.stendhal.server.core.rp.achievement.Achievement;
 
 /**
- * XML based loader of achievement groups
+ * Achievement group XML loader stub
+ * 
  *
- * @author 
+ * @author Ben Piggott
  */
 public class AchievementGroupsXMLLoader extends DefaultHandler {
 

@@ -20,7 +20,12 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import games.stendhal.server.core.rp.achievement.Achievement;
 
-
+/**
+ * Achievement XML loader stub
+ * 
+ *
+ * @author Ben Piggott
+ */
 public final class AchievementXMLLoader extends DefaultHandler {
 
 	protected URI uri;

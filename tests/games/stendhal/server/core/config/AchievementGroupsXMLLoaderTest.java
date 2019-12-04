@@ -22,6 +22,9 @@ import games.stendhal.server.maps.MockStendlRPWorld;
 import marauroa.server.game.db.DatabaseFactory;
 import utilities.PlayerTestHelper;
 
+/**
+ * @author Ben Piggott
+ */
 public class AchievementGroupsXMLLoaderTest {
 	private StendhalRPZone zone;
 	
