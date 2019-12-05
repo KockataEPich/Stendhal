@@ -1,98 +1,141 @@
-/* $Id$ */
-/***************************************************************************
- *                      (C) Copyright 2003 - Marauroa                      *
- ***************************************************************************
- ***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
 package games.stendhal.server.core.rule.defaultruleset;
 
 import java.util.Map;
 
+import games.stendhal.server.core.rp.achievement.Category;
+
+/*
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+
+import java.util.Map.Entry;
+*/
 /**
  * Default achievement stub
+ * All default achievement
  * 
  *
- * @author Ben Piggott
+ * 
+ * @author Heng Gao
  */
 public class DefaultAchievement {
 	
 	
+
+	/** Achievement name. */
+	private String name;
+
+	/** optional Achievement description. * */
+	private String description;
+
+	/** Achievement identifier. */
+	private String identifier;
+
+	/** Achievement title. */
+	private String title;
+
+	/** Achievement score. */
+	private int score;
+
+	/** Achievement active. */
+	private boolean active;
+
+	/** Achievement category. */
+	private Category category;
+
+	/** The list of conditions for this achievement. */ // change this
+	private Map<String, String> conditions;
+
 	public String getName() {
-		return null;
+		return name;
 	}
 
 	public void setName(String name) {
-		return;
+		this.name = name;
 	}
 	
 	
+
 	public String getDescription() {
-		return null;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		return;
+		this.description = description;
 	}
 
 	public String getIdentifier() {
-		return null;
+		return identifier;
 	}
 
 	public void setIdentifier(String identifier) {
-		return;
+		this.identifier = identifier;
 	}
 
 	public String getTitle() {
-		return null;
+		return title;
 	}
 
 	public void setTitle(String title) {
-		return;
+		this.title = title;
 	}
 
 	public int getScore() {
-		return 0;
+		return score;
 	}
 
 	public void setScore(int score) {
-		return;
+		this.score = score;
 	}
 
 	public boolean isActive() {
-		return false;
+		return active;
 	}
 
 	public void setActive(boolean active) {
-		return;
+		this.active = active;
 	}
 
-	public String getEnumeration() {
-		return null;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setEnumeration(String enumeration) {
-		return;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
-	public Map<String, String> getConditions() { 
-		return null;
+	public Map<String, String> getConditions() {
+		return conditions;
 	}
 
-	public void setConditions(Map<String, String> conditions)  {
-		return;
-	}	
-	
-	public void addConditions(String name, String cond)  {
-		return;
-	}	
+
+	public void setConditions(Map<String, String> conditions) {
+		this.conditions = conditions;
+	}
+
+	public void addConditions(String name, String cond) {
+		this.conditions.put(name, cond);
+	}
+
+
 	
 	public String toXML() {
-		return null;
+		final StringBuilder os = new StringBuilder();
+		os.append("    <identifier> " + identifier + "</identifier>\n");
+		os.append("    <title> " + title + "</title>\n");
+		os.append("    <category> " + category + "</category>\n");
+		os.append("    <description>" + description + "</description>\n");
+		os.append("    <score>" + score + "</score>\n");
+		os.append("    <active>" + active + "</active>\n");
+		os.append("    <condition ");
+
+		for (Map.Entry<String, String> entry : conditions.entrySet()) {
+			os.append("  " + entry.getKey() + "=\"" + entry.getValue() + "\n");
+
+		}
+		os.append("\"/>\n");
+		return os.toString();
 	}
 }
