@@ -1,6 +1,13 @@
 Changelog
 ---------
 ---------
+1.33
+- Begin migration of achievements from java to XML
+- Create new XML schema for achievements
+- Migrate a couple of achievements to XML
+- Create new XML loaders for above purpose
+- Creation of tests for above loaders
+
 1.32
 *adds*
 - First release of Lon Jatham at the Deniran Institute of Technology
