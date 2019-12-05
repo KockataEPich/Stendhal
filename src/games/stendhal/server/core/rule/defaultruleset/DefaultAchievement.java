@@ -1,6 +1,7 @@
 package games.stendhal.server.core.rule.defaultruleset;
 
 import java.util.Map;
+<<<<<<< HEAD
 
 import games.stendhal.server.core.rp.achievement.Category;
 
@@ -23,6 +24,11 @@ import java.util.Map.Entry;
 public class DefaultAchievement {
 	
 	
+=======
+import games.stendhal.server.core.rp.achievement.Category;
+
+public class DefaultAchievement {
+>>>>>>> 53f74d9021... Forgot to fix merge conflict
 
 	/** Achievement name. */
 	private String name;
@@ -55,8 +61,6 @@ public class DefaultAchievement {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 
 	public String getDescription() {
 		return description;
@@ -110,7 +114,6 @@ public class DefaultAchievement {
 		return conditions;
 	}
 
-
 	public void setConditions(Map<String, String> conditions) {
 		this.conditions = conditions;
 	}
@@ -119,8 +122,6 @@ public class DefaultAchievement {
 		this.conditions.put(name, cond);
 	}
 
-
-	
 	public String toXML() {
 		final StringBuilder os = new StringBuilder();
 		os.append("    <identifier> " + identifier + "</identifier>\n");
