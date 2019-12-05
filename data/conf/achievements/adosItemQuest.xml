@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+												
+  <achievement>
+    <identifier>"quest.special.daily.0010"</identifier>
+    <title>"Ados' Supporter"</title>
+    <category>
+      QUEST_ADOS_ITEMS
+    </category>
+    <description>"Finish daily monster quest 10 times"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>"daily_item"</param1>
+     <param2>2</param2>
+     <param3>9</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.daily_item.0050"</identifier>
+    <title>"Ados' Provider"</title>
+    <category>
+      QUEST_ADOS_ITEMS
+    </category>
+    <description>"Finish daily item quest 50 times"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>"daily_item"</param1>
+     <param2>2</param2>
+     <param3>49</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.daily_item.0100"</identifier>
+    <title>"Ados' Supplier"</title>
+    <category>
+      QUEST_ADOS_ITEMS
+    </category>
+    <description>"Finish daily item quest 100 times"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"daily_item"</param1>
+     <param2>2</param2>
+     <param3>99</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.daily_item.250"</identifier>
+    <title>"Ados' Stockpiler"</title>
+    <category>
+      QUEST_ADOS_ITEMS
+    </category>
+    <description>"Finish daily item quest 250 times"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"daily_item"</param1>
+     <param2>2</param2>
+     <param3>249</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.daily_item.500"</identifier>
+    <title>"Ados' Hoarder"</title>
+    <category>
+      QUEST_ADOS_ITEMS
+    </category>
+    <description>"Finish daily item quest 500 times"</description>
+    <score>5</score>
+    <active>true</active>
+    <condition>
+     <param1>"daily_item"</param1>
+     <param2>2</param2>
+     <param3>499</param3>
+    </condition>
+  </achievement>
+
+
+</achievements>

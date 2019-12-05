@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal groups.xsd ">
+	<group uri="achievements/adosItemQuest.xml"/>
+	<group uri="achievements/experience.xml"/>
+	<group uri="achievements/quest.xml"/>
+	<group uri="achievements/semosMonsterQuest.xml"/>
+	<!--
+	<group uri="items/capturetheflag.xml"/>
+	-->
+</groups>

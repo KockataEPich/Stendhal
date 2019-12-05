@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+
+  <achievement>
+    <identifier>"quest.special.elf_princess.0025"</identifier>
+    <title>"Faiumoni's Casanova"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Finish elf princess quest 25 times"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"elf_princess"</param1>
+     <param2>2</param2>
+     <param3>24</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.kill_monks.0025"</identifier>
+    <title>"Heretic"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Finish Kill Monks quest 25 times"</description>
+    <score>5</score>
+    <active>true</active>
+    <condition>
+     <param1>"kill_monks"</param1>
+     <param2>2</param2>
+     <param3>24</param3>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.special.maze"</identifier>
+    <title>"Pathfinder"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Finish the maze"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>"maze"</param1>
+     <param2>2</param2>
+     <param3>24</param3>
+    </condition>
+  </achievement>
+  
+
+  <achievement>
+    <identifier>"quest.deathmatch"</identifier>
+    <title>"Deathmatch Hero"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Earn 100,000 points in deathmatch"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"deathmatch_score"</param1>
+     <param2>0</param2>
+     <param3>100000</param3>
+    </condition>
+  </achievement>
+    
+  <achievement>
+    <identifier>"quest.special.semos"</identifier>
+    <title>"Aide to Semos folk"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Complete all quests in Semos City"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"Region.SEMOS_CITY"</param1>
+    </condition>
+  </achievement>
+  
+				
+	<achievement>
+    <identifier>"quest.special.ados"</identifier>
+    <title>"Helper of Ados city dwellers"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Complete all quests in Ados City"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"Region.ADOS_CITY"</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"quest.count.80"</identifier>
+    <title>"Quest Junkie"</title>
+    <category>
+      QUEST
+    </category>
+    <description>"Complete at least 80 quests"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>"80"</param1>
+    </condition>
+  </achievement>
+
+</achievements>

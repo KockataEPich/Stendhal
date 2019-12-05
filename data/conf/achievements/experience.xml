@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+	
+  <achievement>
+    <identifier>"xp.level.010"</identifier>
+    <title>"Greenhorn"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 10"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>9</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"xp.level.050"</identifier>
+    <title>"Novice"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 50"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>49</param1>
+    </condition>
+  </achievement>
+  
+  
+  <achievement>
+    <identifier>"xp.level.100"</identifier>
+    <title>"Apprentice"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 100"</description>
+    <score>1</score>
+    <active>true</active>
+    <condition>
+     <param1>99</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"xp.level.200"</identifier>
+    <title>"Adventurer"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 300"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>299</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"xp.level.300"</identifier>
+    <title>"Experienced Adventurer"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 400"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>399</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"xp.level.400"</identifier>
+    <title>"Master Adventurer"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 400"</description>
+    <score>2</score>
+    <active>true</active>
+    <condition>
+     <param1>399</param1>
+    </condition>
+  </achievement>
+  
+  <achievement>
+    <identifier>"xp.level.500"</identifier>
+    <title>"Stendhal Master"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 500"</description>
+    <score>5</score>
+    <active>true</active>
+    <condition>
+     <param1>499</param1>
+    </condition>
+  </achievement>
+  
+												
+  <achievement>
+    <identifier>"xp.level.597"</identifier>
+    <title>"Stendhal High Master"</title>
+    <category>
+      EXPERIENCE
+    </category>
+    <description>"Reach level 597"</description>
+    <score>5</score>
+    <active>true</active>
+    <condition>
+     <param1>596</param1>
+    </condition>
+  </achievement>
+
+</achievements>
