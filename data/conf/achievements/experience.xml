@@ -6,7 +6,7 @@
     <identifier>"xp.level.010"</identifier>
     <title>"Greenhorn"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 10"</description>
     <score>1</score>
@@ -20,7 +20,7 @@
     <identifier>"xp.level.050"</identifier>
     <title>"Novice"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 50"</description>
     <score>1</score>
@@ -35,7 +35,7 @@
     <identifier>"xp.level.100"</identifier>
     <title>"Apprentice"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 100"</description>
     <score>1</score>
@@ -49,7 +49,7 @@
     <identifier>"xp.level.200"</identifier>
     <title>"Adventurer"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 300"</description>
     <score>2</score>
@@ -63,7 +63,7 @@
     <identifier>"xp.level.300"</identifier>
     <title>"Experienced Adventurer"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 400"</description>
     <score>2</score>
@@ -77,7 +77,7 @@
     <identifier>"xp.level.400"</identifier>
     <title>"Master Adventurer"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 400"</description>
     <score>2</score>
@@ -91,7 +91,7 @@
     <identifier>"xp.level.500"</identifier>
     <title>"Stendhal Master"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 500"</description>
     <score>5</score>
@@ -106,7 +106,7 @@
     <identifier>"xp.level.597"</identifier>
     <title>"Stendhal High Master"</title>
     <category>
-      <whatCategory>EXPERIENCE</whatCategory>
+      EXPERIENCE
     </category>
     <description>"Reach level 597"</description>
     <score>5</score>

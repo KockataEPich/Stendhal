@@ -6,7 +6,7 @@
     <identifier>"quest.special.daily.0010"</identifier>
     <title>"Semos' Protector"</title>
     <category>
-      <whatCategory>QUEST_SEMOS_MONSTER</whatCategory>
+      QUEST_SEMOS_MONSTER
     </category>
     <description>"Finish daily monster quest 10 times"</description>
     <score>1</score>
@@ -22,7 +22,7 @@
     <identifier>"quest.special.daily.0050"</identifier>
     <title>"Semos' Guardian"</title>
     <category>
-      <whatCategory>QUEST_SEMOS_MONSTER</whatCategory>
+      QUEST_SEMOS_MONSTER
     </category>
     <description>"Finish daily monster quest 50 times"</description>
     <score>1</score>
@@ -38,7 +38,7 @@
     <identifier>"quest.special.daily.0100"</identifier>
     <title>"Semos' Hero"</title>
     <category>
-      <whatCategory>QUEST_SEMOS_MONSTER</whatCategory>
+      QUEST_SEMOS_MONSTER
     </category>
     <description>"Finish daily monster quest 100 times"</description>
     <score>2</score>
@@ -54,7 +54,7 @@
     <identifier>"quest.special.daily.0250"</identifier>
     <title>"Semos' Champion"</title>
     <category>
-      <whatCategory>QUEST_SEMOS_MONSTER</whatCategory>
+      QUEST_SEMOS_MONSTER
     </category>
     <description>"Finish daily monster quest 250 times"</description>
     <score>2</score>
@@ -70,7 +70,7 @@
     <identifier>"quest.special.daily.0500"</identifier>
     <title>"Semos' Vanquisher"</title>
     <category>
-      <whatCategory>QUEST_SEMOS_MONSTER</whatCategory>
+      QUEST_SEMOS_MONSTER
     </category>
     <description>"Finish daily monster quest 500 times"</description>
     <score>5</score>
