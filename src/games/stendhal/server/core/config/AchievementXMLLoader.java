@@ -30,7 +30,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import games.stendhal.server.core.rp.achievement.Category;
-import games.stendhal.server.core.rule.defaultruleset.DefaultSampleAchievement;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 
 
 /* @author Heng Gao */
@@ -38,9 +38,9 @@ import games.stendhal.server.core.rule.defaultruleset.DefaultSampleAchievement;
 
 
 
-public final class SampleAchievementXMLLoader extends DefaultHandler {
+public final class AchievementXMLLoader extends DefaultHandler {
 
-	private static final Logger logger = Logger.getLogger(SampleAchievementXMLLoader.class);
+	private static final Logger logger = Logger.getLogger(AchievementXMLLoader.class);
 
 
 	private static final String EXPERIENCE = null;
@@ -106,18 +106,18 @@ public final class SampleAchievementXMLLoader extends DefaultHandler {
 	
 	private String text;
 
-	private List<DefaultSampleAchievement> loadedSampleAchievements;
+	private List<DefaultAchievement> loadedSampleAchievements;
 	
 	
-	public List<DefaultSampleAchievement> load(URI uri) throws SAXException {
-		loadedSampleAchievements = new LinkedList<DefaultSampleAchievement>();
+	public List<DefaultAchievement> load(URI uri) throws SAXException {
+		loadedSampleAchievements = new LinkedList<DefaultAchievement>();
 		// Use the default (non-validating) parser
 		final SAXParserFactory factory = SAXParserFactory.newInstance();
 		try {
 			// Parse the input
 			final SAXParser saxParser = factory.newSAXParser();
 
-			final InputStream is = SampleAchievementXMLLoader.class.getResourceAsStream(uri.getPath());
+			final InputStream is = AchievementXMLLoader.class.getResourceAsStream(uri.getPath());
 
 			if (is == null) {
 				throw new FileNotFoundException("cannot find resource '" + uri
@@ -173,7 +173,7 @@ public final class SampleAchievementXMLLoader extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
 		if(qName.equals("SampleAchievement")) {
-			final DefaultSampleAchievement SampleAchievement = new DefaultSampleAchievement();
+			final DefaultAchievement SampleAchievement = new DefaultAchievement();
 			SampleAchievement.setIdentifier(identifier);
 	
 			SampleAchievement.setTitle(title);

@@ -20,7 +20,7 @@ import java.util.Map.Entry;
  * 
  * @author Heng Gao
  */
-public class DefaultSampleAchievement {
+public class DefaultAchievement {
 	
 	
 
