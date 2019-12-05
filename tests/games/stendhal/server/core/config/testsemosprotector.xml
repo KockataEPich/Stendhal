@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements xmlns="stendhal"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="stendhal ../achievements.xsd ">
+
+	<achievement>
+		<identifier>"quest.special.daily.0010"</identifier>
+		<title>"Semos' Protector"</title>
+		<category>
+			<whatCategory>QUEST_ADOS_ITEMS</whatCategory>
+		</category>
+		<description>"Finish daily monster quest 10 times"</description>
+		<score>1</score>
+		<active>true</active>
+		<condition>
+			<param1>"daily_item"</param1>
+			<param2>2</param2>
+			<param3>9</param3>
+		</condition>
+	</achievement>
+</achievements>
