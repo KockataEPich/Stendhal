@@ -17,7 +17,7 @@ import java.util.List;
 
 import org.xml.sax.helpers.DefaultHandler;
 
-import games.stendhal.server.core.rp.achievement.Achievement;
+import games.stendhal.server.core.rule.defaultruleset.DefaultAchievement;
 
 /**
  * Achievement group XML loader stub
@@ -34,7 +34,7 @@ public class AchievementGroupsXMLLoader extends DefaultHandler {
 		this.uri = uri;
 	}
 
-	public List<Achievement> load() {
+	public List<DefaultAchievement> load() {
 		return null;
 	}
 
