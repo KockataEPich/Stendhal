@@ -6,7 +6,7 @@
     <identifier>"quest.special.elf_princess.0025"</identifier>
     <title>"Faiumoni's Casanova"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Finish elf princess quest 25 times"</description>
     <score>2</score>
@@ -22,7 +22,7 @@
     <identifier>"quest.special.kill_monks.0025"</identifier>
     <title>"Heretic"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Finish Kill Monks quest 25 times"</description>
     <score>5</score>
@@ -38,7 +38,7 @@
     <identifier>"quest.special.maze"</identifier>
     <title>"Pathfinder"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Finish the maze"</description>
     <score>1</score>
@@ -55,7 +55,7 @@
     <identifier>"quest.deathmatch"</identifier>
     <title>"Deathmatch Hero"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Earn 100,000 points in deathmatch"</description>
     <score>2</score>
@@ -71,7 +71,7 @@
     <identifier>"quest.special.semos"</identifier>
     <title>"Aide to Semos folk"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Complete all quests in Semos City"</description>
     <score>2</score>
@@ -86,7 +86,7 @@
     <identifier>"quest.special.ados"</identifier>
     <title>"Helper of Ados city dwellers"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Complete all quests in Ados City"</description>
     <score>2</score>
@@ -100,7 +100,7 @@
     <identifier>"quest.count.80"</identifier>
     <title>"Quest Junkie"</title>
     <category>
-      <whatCategory>QUEST</whatCategory>
+      QUEST
     </category>
     <description>"Complete at least 80 quests"</description>
     <score>2</score>
