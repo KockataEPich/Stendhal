@@ -954,6 +954,7 @@
 				<pathelement path="${hamcrest_jar}"/>
 				<pathelement path="${junit_jar}"/>
 				<pathelement path="${groovy_jar}"/>
+				<pathelement path="${guava_jar}"/>
 				<pathelement path="${simple_jar}"/>
 				<pathelement path="${easymock_jar}"/>
 				<pathelement path="${easymockclassextension_jar}"/>
